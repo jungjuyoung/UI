@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magic overflow flexbox fix</title>
+  <style>
+    .box{
+      width: 300px;
+    }
+    .box span{
+      padding-left:5px;
+    }
+    .row{
+      display: flex;
+      border:1px solid red
+    }
+    .wrapper{
+      flex: 1 1 auto;
+      min-width: 0
+    }
+    .description{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  </style>
+</head>
+<body>
+  <!-- have you ever wanted to achieve something like this with flexbox rows? -->
+ <!-- when the description is too long, we want to display some ellipsis.. -->
+
+ <div class="box">
+   <div class="row">
+   <time>18 Jul 2021</time>
+   <span>129.03</span>
+   <span class="wrapper">
+     <span class="description">Payment from David whitehead</span>
+   </span>
+   <span>edit</span>
+  </div>
+  <div class="row">
+   <time>18 Jul 2021</time>
+   <span>129.03</span>
+   <span class="wrapper">
+     <span class="description">Payment from David whitehead</span>
+   </span>
+   <span>edit</span>
+  </div>
+  <div class="row">
+   <time>18 Jul 2021</time>
+   <span>129.03</span>
+   <span class="wrapper">
+     <span class="description">Payment from David whitehead</span>
+   </span>
+   <span>edit</span>
+  </div>
+ </div>
+  
+</body>
+</html>
